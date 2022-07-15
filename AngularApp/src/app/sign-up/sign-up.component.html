@@ -1,0 +1,68 @@
+
+<div class="container-100">
+    <div class="row">
+
+      <div class="col-md-6 offset-md-3">
+
+        <form class="form-group"   (ngSubmit) = "onSubmit(userForm)"  #userForm="ngForm"><br>
+            <h4>Sign Up</h4><br>
+            <div [hidden]="userForm.submitted"></div>
+            <div class="form-group">
+                <div class="mb-3">
+                <!-- <h4> <label for="name"> First Name </label> </h4> -->
+                <input type="text" name="firstname" class="form-control" [(ngModel)]="modelSignUp.firstname"
+                  #firstname="ngModel" required minlength="4" placeholder="First Name"
+                  [class.is-invalid]="firstname.invalid && firstname.touched" required autocomplete="off"> 
+                  </div>
+              </div>
+        
+              <div class="form-group ">
+                <div class="mb-3">
+                    <!-- <h4> <label for="name">Last Name </label> </h4> -->
+                  <input name="lastname" type="text" class="form-control" [(ngModel)]="modelSignUp.lastname"
+                    #lastname="ngModel" placeholder="Last Name" required minlength="3"
+                    [class.is-invalid]="lastname.invalid && lastname.touched" required autocomplete="off">
+                </div>
+    
+              </div>
+
+
+              <div class="form-group ">
+                <div class="mb-3">
+                    <!-- <h4> <label for="name">User Name </label> </h4> -->
+                  <input name="username" type="text" class="form-control" [(ngModel)]="modelSignUp.username"
+                    #username="ngModel" placeholder="User Name" required minlength="6"
+                    [class.is-invalid]="username.invalid && username.touched" required autocomplete="off">
+                </div>
+    
+              </div>
+
+              <div class="form-group ">
+                <div class="mb-3">
+                    <!-- <h4> <label for="name">Password</label> </h4> -->
+                  <input name="password" type="password" class="form-control" [(ngModel)]="modelSignUp.password"
+                    #password="ngModel" placeholder="Password " required minlength="6"
+                    [class.is-invalid]="password.invalid && password.touched" required autocomplete="off">
+                </div>
+    
+              </div>
+              <div class="row">
+  
+                <div class="col-md-12 offset-md-3" >
+    
+                  <button type="submit" class="btn btn-primary " [disabled]="userForm.invalid">Submit</button>
+                 
+                  <button type="button" class="btn btn-secondary mx-2" (click)="userForm.resetForm({})">Clear</button>
+                </div>
+                
+              </div>
+              
+          </form>
+        
+      </div>
+
+    </div>
+  </div>
+
+
+
